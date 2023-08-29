@@ -1,0 +1,43 @@
+@use "../mixin" as mixin;
+
+.check-box {
+	display: inline-block;
+	line-height: 1;
+	cursor: pointer;
+	> input {
+		display: none;
+		&:checked {
+			+ span {
+				&::after {
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 6px;
+					transform: translateY(-60%) rotate(45deg);
+					width: 3px;
+					height: 6px;
+					border-bottom: 2px solid mixin.$color-g-1;
+					border-right: 2px solid mixin.$color-g-1;
+					content: "";
+				}
+			}
+		}
+	}
+	> span {
+		display: inline-block;
+		position: relative;
+		padding-left: 16px;
+		&::before {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 16px;
+			height: 16px;
+			border: 1px solid mixin.$color-g-1;
+			box-sizing: border-box;
+			content: "";
+		}		
+	}	
+}

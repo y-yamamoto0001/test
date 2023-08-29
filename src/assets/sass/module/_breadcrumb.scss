@@ -1,0 +1,31 @@
+@use "../mixin" as mixin;
+
+.breadcrumb {
+	> li {
+		display: inline-block;
+		&:not(:last-child) {
+			margin-right: 0px;
+			&::after {
+				display: inline-block;
+				position: relative;
+				top: -0.1em;
+				vertical-align: middle;
+				transform: translate(-35%, 0) rotate(45deg);
+				width: 5px;
+				height: 5px;
+				margin-left: 0px;
+				border-top: 1px solid #000000;
+				border-right: 1px solid #000000;
+				content: "";
+			}
+		}
+	}
+	&--2 {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		> li {
+			display: inline;
+		}
+	}
+}

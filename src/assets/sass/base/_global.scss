@@ -1,0 +1,98 @@
+@use "../mixin" as mixin;
+
+html {
+	color: mixin.$color-g-1;
+	font-size: 100%;
+	font-family: mixin.$font-family-yugo;
+	letter-spacing: mixin.$letter-spacing-2;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	@include mixin.font-size(mixin.$font-size-10);
+	line-height: mixin.$line-height-4;
+}
+
+a {
+	color: mixin.$color-g-1;
+	text-decoration: none;
+	&:hover {
+		color: mixin.$color-g-1;
+		text-decoration: none;
+	}
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	@include mixin.font-size(mixin.$font-size-1);
+	line-height: mixin.$line-height-1;
+	vertical-align: top;
+}
+
+svg {
+	fill: currentColor;
+}
+
+input, button, textarea, select {
+	display: block;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	appearance: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance:textfield;
+}
+
+input::-webkit-input-placeholder {
+	padding-top: 0.1em;
+}
+
+textarea {
+	vertical-align: top;
+}
+
+button {
+	text-align: center;
+	cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+caption, th, td {
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+main {
+	display: block;
+}
+
+address {
+	font-style: normal;
+	font-weight: normal;
+	line-height: inherit;
+}

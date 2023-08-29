@@ -1,0 +1,13 @@
+@use "../mixin" as mixin;
+
+.tab-nav {
+	> li {
+		color: #000000;
+		cursor: pointer;
+	}
+}
+.tab-content {
+	> div {
+		
+	}
+}

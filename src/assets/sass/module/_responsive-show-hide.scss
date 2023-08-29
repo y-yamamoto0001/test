@@ -1,0 +1,13 @@
+@use "../mixin" as mixin;
+
+.only-sp {
+	@include mixin.mq-up (md) {
+		display:none !important;
+	}
+}
+
+.only-pc {
+	@include mixin.mq-down (md) {
+		display:none !important;
+	}
+}
