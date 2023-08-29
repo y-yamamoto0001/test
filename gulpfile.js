@@ -11,7 +11,7 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
 const svgSprite = require('gulp-svg-sprite');
-const webserver = require('gulp-webserver');
+//const webserver = require('gulp-webserver');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const changed = require('gulp-changed');
@@ -201,10 +201,10 @@ const watchTask = (done) => {
 	done();
 }
 
-const webserverTask = (done) => {
+/*const webserverTask = (done) => {
 	src(publicPath)
 		.pipe(webserver({livereload: true}));
 	done();
-}
+}*/
 
-exports.default = series(ejsTask, sassTask, webpackTask, jsLibTask, imageTask, svgSpriteTask, pdfTask, videoTask, fontTask, watchTask, webserverTask);
+exports.default = series(ejsTask, sassTask, webpackTask, jsLibTask, imageTask, svgSpriteTask, pdfTask, videoTask, fontTask, watchTask,/* webserverTask*/);
