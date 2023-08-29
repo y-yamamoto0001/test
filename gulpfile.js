@@ -75,44 +75,7 @@ const jsLibTask = (done) => {
 	done();
 }
 
-const imageTask = (done) => {
-	src([
-			srcPath + 'assets/img/**/*.{png,jpg,gif,svg,ico}',
-			'!' + srcPath + 'assets/img/common/symbols/**/*.svg'
-		])
-		.pipe(plumber({
-			errorHandler: notify.onError({
-				title: '画像圧縮の失敗',
-				message: '<%= error.message %>'
-			})
-		}))
-		.pipe(changed(publicPath + 'assets/img'))
-		.pipe(imagemin([
-			pngquant({
-				quality: [.65, .80],
-				speed: 1,
-				floyd:0
-			}),
-			mozjpeg({
-				quality:85,
-				progressive: true
-			}),
-			imagemin.svgo({
-				plugins: [
-					{removeViewBox: false},
-					{removeMetadata: false},
-					{removeUnknownsAndDefaults: true},
-					{convertShapeToPath: false},
-					{collapseGroups: false},
-					{cleanupIDs: true}
-				]
-			}),
-			imagemin.optipng(),
-			imagemin.gifsicle()
-		]))
-		.pipe(dest(publicPath + 'assets/img'));
-	done();
-}
+
 
 const svgSpriteTask = (done) => {
 	src(srcPath + 'assets/img/common/symbols/**/*.svg')
@@ -194,7 +157,7 @@ const watchTask = (done) => {
 	watch([srcPath + 'ejs/**/*.ejs', srcPath + 'ejs/data.json'], ejsTask);
 	watch([srcPath + 'assets/sass/**/*.scss'], sassTask);
 	watch([srcPath + 'assets/js/**/*.js'], series(webpackTask, jsLibTask));
-	watch([srcPath + 'assets/img/**/*.{png,jpg,gif,svg,ico}'], series(imageTask, svgSpriteTask));
+	watch([srcPath + 'assets/img/**/*.{png,jpg,gif,svg,ico}'], series(svgSpriteTask));
 	watch([srcPath + 'assets/pdf/**/*.pdf'], pdfTask);
 	watch([srcPath + 'assets/video/**/*.mp4'], videoTask);
 	watch([srcPath + 'assets/font/**/*.{eot,svg,ttf,woff}'], fontTask);
@@ -207,4 +170,4 @@ const watchTask = (done) => {
 	done();
 }*/
 
-exports.default = series(ejsTask, sassTask, webpackTask, jsLibTask, imageTask, svgSpriteTask, pdfTask, videoTask, fontTask, watchTask,/* webserverTask*/);
+exports.default = series(ejsTask, sassTask, webpackTask, jsLibTask, svgSpriteTask, pdfTask, videoTask, fontTask, watchTask,/* webserverTask*/);
