@@ -18,6 +18,7 @@ const changed = require('gulp-changed');
 const rename = require('gulp-rename');
 
 console.log(77777777);
+console.log(process.env.NODE_VERSION);
 
 const srcPath = './src/';
 const publicPath = './public/';
