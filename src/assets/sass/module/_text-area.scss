@@ -1,9 +1,0 @@
-@use "../mixin" as mixin;
-
-.text-area {
-	width: 100%;
-	padding: 16px 16px;
-	border: 1px solid mixin.$color-g-1;
-	box-sizing: border-box;
-	@include mixin.font-size(mixin.$font-size-10);
-}
