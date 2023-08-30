@@ -1,0 +1,25 @@
+@use "../mixin" as mixin;
+
+.btn-6 {background: mixin.$color-g-13;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	&::before {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6.9px 4px 0 4px;
+		border-color: #000000 transparent transparent transparent;
+		content: "";
+	}
+	&--type-2 {
+		&::before {
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}		
+}

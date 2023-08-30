@@ -1,0 +1,9 @@
+@use "../mixin" as mixin;
+
+.accordion {
+	.js-accordion-trigger {
+		+ ul {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+@use "../mixin" as mixin;
+
+.modal {
+	visibility: hidden;
+	opacity: mixin.$opacity-1;
+	transition: opacity mixin.$animation-speed-2 ease, visibility mixin.$animation-speed-1 mixin.$animation-speed-2 ease;
+	&.is-show {
+		visibility: visible;
+		opacity: mixin.$opacity-7;
+		transition: opacity mixin.$animation-speed-2 ease;
+	}
+}

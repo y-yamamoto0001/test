@@ -1,0 +1,47 @@
+@use "../mixin" as mixin;
+
+.mfp-container {
+	padding: 0;
+	.mfp-content {
+		max-width: 900px;
+	}
+}
+
+.modal-2-content {
+	&__inner {
+		background-color: mixin.$color-g-16;
+	}
+}
+
+.modal-2-close {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25px;
+	height: 25px;
+	background: mixin.$color-g-1;
+}
+
+.modal-2-arrow {
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 25px;
+	height: 25px;
+	background: mixin.$color-g-1;
+	&--left {
+		left: 0;
+	}
+	&--right {
+		right: 0;
+	}
+}
+
+@media all and (max-width: 900px) {
+	.mfp-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

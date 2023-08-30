@@ -1,0 +1,20 @@
+@use "../mixin" as mixin;
+
+.tab-nav {
+	> li {
+		transition-property: color;
+		transition-duration: 0.2s;
+		transition-timing-function: ease;
+		&.is-current {
+			color: #ff0000;
+		}
+	}
+}
+.tab-content {
+	> div {
+		display: none;
+		&.is-current {
+			display: block;
+		}
+	}
+}

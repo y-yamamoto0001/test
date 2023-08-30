@@ -1,0 +1,44 @@
+@use "../mixin" as mixin;
+
+.radio-button {
+	display: inline-block;
+	line-height: 1;
+	cursor: pointer;
+	> input {
+		display: none;
+		&:checked {
+			+ span {
+				&::after {
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 3px;
+					transform: translateY(-50%);
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background: mixin.$color-g-1;
+					content: "";
+				}
+			}
+		}
+	}
+	> span {
+		display: inline-block;
+		position: relative;
+		padding-left: 16px;
+		&::before {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 16px;
+			height: 16px;
+			border: 1px solid mixin.$color-g-1;
+			border-radius: 50%;
+			box-sizing: border-box;
+			content: "";
+		}
+	}
+}

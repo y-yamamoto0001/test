@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@mixin font-size($size, $base: 16, $is-important: false) {
+	@if $is-important == false {
+		font-size: $size + px;
+		font-size: math.div($size, $base) + rem;
+	} @else {
+		font-size: $size + px !important;
+		font-size: math.div($size, $base) + rem !important;
+	}
+}

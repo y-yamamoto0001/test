@@ -1,0 +1,12 @@
+@use "../mixin" as mixin;
+
+.page {
+	&.is-fixed {
+		overflow: hidden;
+		height: 100%;	
+		body {
+			overflow: hidden;
+			max-height: 100%;
+		}
+	}
+}
