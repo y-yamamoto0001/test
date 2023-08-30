@@ -190,16 +190,16 @@ const fontTask = (done) => {
 	done();
 }
 
-const watchTask = (done) => {
-	watch([srcPath + 'ejs/**/*.ejs', srcPath + 'ejs/data.json'], ejsTask);
-	watch([srcPath + 'assets/sass/**/*.scss'], sassTask);
-	watch([srcPath + 'assets/js/**/*.js'], series(webpackTask, jsLibTask));
-	watch([srcPath + 'assets/img/**/*.{png,jpg,gif,svg,ico}'], series(imageTask, svgSpriteTask));
-	watch([srcPath + 'assets/pdf/**/*.pdf'], pdfTask);
-	watch([srcPath + 'assets/video/**/*.mp4'], videoTask);
-	watch([srcPath + 'assets/font/**/*.{eot,svg,ttf,woff}'], fontTask);
-	done();
-}
+//const watchTask = (done) => {
+//	watch([srcPath + 'ejs/**/*.ejs', srcPath + 'ejs/data.json'], ejsTask);
+//	watch([srcPath + 'assets/sass/**/*.scss'], sassTask);
+//	watch([srcPath + 'assets/js/**/*.js'], series(webpackTask, jsLibTask));
+//	watch([srcPath + 'assets/img/**/*.{png,jpg,gif,svg,ico}'], series(imageTask, svgSpriteTask));
+//	watch([srcPath + 'assets/pdf/**/*.pdf'], pdfTask);
+//	watch([srcPath + 'assets/video/**/*.mp4'], videoTask);
+//	watch([srcPath + 'assets/font/**/*.{eot,svg,ttf,woff}'], fontTask);
+//	done();
+//}
 
 /*const webserverTask = (done) => {
 	src(publicPath)
@@ -207,4 +207,4 @@ const watchTask = (done) => {
 	done();
 }*/
 
-exports.default = series(ejsTask, sassTask, webpackTask, jsLibTask, imageTask, svgSpriteTask, pdfTask, videoTask, fontTask, watchTask,/* webserverTask*/);
+exports.default = series(ejsTask, sassTask, webpackTask, jsLibTask, imageTask, svgSpriteTask, pdfTask, videoTask, fontTask/*, watchTask, webserverTask*/);
